@@ -1,0 +1,3 @@
+HATEOAS exploration.
+
+FastAPI/htmx
