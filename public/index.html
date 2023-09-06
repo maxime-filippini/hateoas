@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testing FastAPI and HTMX</title>
+    <script src="https://unpkg.com/htmx.org@1.9.5"></script>
+    <link href="index.css" rel="stylesheet" />
+    <!-- <link href="/dist/output.css" rel="stylesheet" /> -->
+  </head>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+      <button
+        hx-get="/build-random-series"
+        hx-target="#timeseries"
+        hx-swap="innerHTML"
+      >
+        Generate random prices
+      </button>
+      <div id="timeseries"></div>
+
+      <select
+        id="asset"
+        name="symbol"
+        hx-get="/prices"
+        hx-target="#prices"
+        hx-swap="innerHTML"
+      >
+        <option value="AAPL">Apple</option>
+        <option value="MSFT">Microsoft</option>
+        <option value="TSLA">Tesla</option>
+        <option value="NVDA">Nvidia</option>
+        <option value="SPY">S&P 500</option>
+      </select>
+
+      <div
+        id="prices"
+      ></div>
+    </div>
+  </body>
+</html>
